@@ -1,0 +1,50 @@
+//Create the class Rectangle with member data to represent lenght,breadth and area.Use appropriate member function to read length and breadth to calculate area of rectangle.Next create a derived class called box from class rectangle.Use appropriate member function to read height of box//
+
+#include<iostream>
+using namespace std;
+class Rectangle
+{
+    int area;
+    protected:
+    int length,breadth;
+    public:
+    void read()
+    {
+      cout<<"Enter length and breadth :"<<endl;
+      cin>>length>>breadth;
+
+    }
+    void process()
+    {
+        area=length*breadth;
+        cout<<"The area of rectangle is:"<<area<<endl;
+    }
+
+   
+};
+class Box : public Rectangle
+{
+   int height ,volume;
+   public:
+   void getdata()
+   {
+       cout<<"Enter height of box:"<<endl;
+       cin>>height;
+
+   }
+   void vol()
+   {
+       volume=length*breadth*height;
+       cout<<"Volume of box:"<<volume<<endl;
+   }
+   };
+int main()
+{
+Rectangle r1;
+    r1.read();
+    r1.process();
+    Box b1;
+    b1.read();
+    b1.getdata();
+    b1.vol();
+}
